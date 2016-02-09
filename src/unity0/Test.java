@@ -17,7 +17,7 @@ public class Test {//FILA----
     }
     
     public static void testingStacks(){
-        System.out.println("-------------Stack Testing--------------");
+        System.out.println("---------------Stack Testing-----------------");
         Stack s = new Stack();
         s.add(10);
         s.add(20);
@@ -32,12 +32,16 @@ public class Test {//FILA----
     }
     
     public static void testingQueue(){
-        System.out.println("-------------Queue Testing--------------");
+        System.out.println("---------------Queue Testing-----------------");
         Queue q = new Queue();
         for(int i=1; i<=20; i++){
             q.add(i);
         }
         System.out.print("Initial values: ");
+        q.print();
+        int d=q.remove();
+        System.out.println("The element removed was: "+d);
+        System.out.print("Current values: ");
         q.print();
     }
 }
