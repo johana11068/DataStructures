@@ -14,6 +14,7 @@ public class Test {//FILA----
     public static void main (String [] args){
         testingStacks();
         testingQueue();
+        testingList();
     }
     
     public static void testingStacks(){
@@ -50,6 +51,7 @@ public class Test {//FILA----
         l.add(5);
         l.add(8);
         l.add(18);
+        l.print();
         l.remove(8);
         l.print();
         
