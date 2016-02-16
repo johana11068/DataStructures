@@ -44,4 +44,14 @@ public class Test {//FILA----
         System.out.print("Current values: ");
         q.print();
     }
+    public static void testingList(){
+        System.out.println("---------------List Testing-----------------");
+        List l = new List();
+        l.add(5);
+        l.add(8);
+        l.add(18);
+        l.remove(8);
+        l.print();
+        
+    }
 }
