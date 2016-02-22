@@ -15,6 +15,7 @@ public class List {
     
     public List(){
         head = null;
+        
     }
     public void add(int d){
         Node n = new Node(d);
@@ -36,10 +37,39 @@ public class List {
         }
         System.out.println();
     }
-    public int remove(int p){
-        return 0;
-        
-    }
+    public int remove(int i){
+        if(head == null){
+            return -1;
+        }
+        if(i==0){
+            head = head.next;
+            return 0;
+        }
+        Node aux = head, p = null;       
+        int counter = 0;
+        for(;counter < i && aux != null;counter++){
+            p = aux;
+            aux = aux.next;
+        }
+        if(aux != null){
+            p.next = aux.next;
+        }       
+        return aux.data;        
+    }    
+    public void removeFirstElement(){
+        if(head == null)return;
+        head = head.next;
+    }    
+    public void removeLastElement(){
+        if(head.next == null){
+            head=head.next;
+        }else{
+            Node aux = head, p = null;
+            while (aux.next != null){
+                p.next = aux.next;
+            }
+        }
+    }    
     public int count(){
         Node aux = head;
         int conter=0;
@@ -47,8 +77,7 @@ public class List {
             conter++;
             aux = aux.next;
         }
-        return conter;
-        
+        return conter;        
     }
     public void printFirstElement(){
         Node aux = head;        

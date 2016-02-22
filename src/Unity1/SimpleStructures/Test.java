@@ -32,5 +32,14 @@ public class Test {
         l.printFirstElement();
         System.out.print("The last element is: ");
         l.printLastElement();
+        System.out.println("The Remove is: ");
+        l.remove(1);
+        l.print();
+        System.out.println("The remove first element: ");
+        l.removeFirstElement();
+        l.print();
+        System.out.println("The remove Last element: ");       
+        l.removeLastElement();
+        l.print();
     }    
 }
