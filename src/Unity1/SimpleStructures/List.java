@@ -61,13 +61,18 @@ public class List {
         head = head.next;
     }    
     public void removeLastElement(){
-        if(head.next == null){
-            head=head.next;
-        }else{
-            Node aux = head, p = null;
-            while (aux.next != null){
+        if(head != null){
+            Node aux = head;
+            Node p = null;
+            if(head.next == null){
+                head = head.next;
+            }else{
+                while (aux.next != null){
+                    p=aux;
+                    aux=aux.next;
+                }
                 p.next = aux.next;
-            }
+            } 
         }
     }    
     public int count(){
