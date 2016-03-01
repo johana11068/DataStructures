@@ -40,6 +40,12 @@ public class Test {
         l.print();
         System.out.println("The remove Last element: ");       
         l.removeLastElement();
+        l.print();        
+        System.out.println("The values after duplication: ");   
+        l.duplicate();
+        l.print();
+        System.out.println("The values after duplication Mirror: ");   
+        l.duplicateMirror();
         l.print();
     }    
 }
