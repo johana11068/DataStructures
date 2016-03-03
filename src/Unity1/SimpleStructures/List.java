@@ -63,6 +63,7 @@ public class List {
             Node n = new Node(aux.data);
             n.next = last.next;
             last.next = n;
+            aux=aux.next;
         }        
     }    
     public int remove(int i){
