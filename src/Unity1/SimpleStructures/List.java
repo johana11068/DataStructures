@@ -14,13 +14,13 @@ public class List {
     private Node head;
     
     public List(){
-        head = null;
-        
+        head = null;        
     }
+    
     public void add(int d){
         Node n = new Node(d);
         if(head == null){
-            head=n;
+            head = n;
         }else{
             Node aux = head;
             while (aux.next != null){
@@ -128,5 +128,31 @@ public class List {
         }
         System.out.println(""+aux.data);
     }            
+    public void insertZeros(){
+        if(head == null) return;
+        Node aux = head;        
+        while(aux.next != null ){
+            Node n = new Node(0);
+            n.next = aux.next;
+            aux = aux.next;
+         }
+    }    
+    public void removeMiddle(){
+        if(head == null)return;   
+        Node aux = head;
+        while(count() %2 == 0){
+            aux = aux.next;
+        }
+    }
+       
+    public int countOdds(){
+        Node aux = head;
+        int conter = 0;
+        while(count() %2 == 0){
+            conter++;
+            aux = aux.next;
+        }
+        return conter;        
+    }
     
 }
