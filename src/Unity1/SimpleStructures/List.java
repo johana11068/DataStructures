@@ -128,28 +128,71 @@ public class List {
         }
         System.out.println(""+aux.data);
     }            
+    public void removeDuplicated(){
+        Node aux = head,p = head;
+        for (int i = 0; i < count(); i++) {
+            if(i %2 == 0){
+                p.next = aux.next;
+                p = aux;
+                aux = aux.next;
+            }else{
+                aux = aux.next;
+            }
+        }    
+    }
+    public void duplicateIntercalated(){
+        Node aux = head, p = head;
+        while(aux.next != null){
+            Node n = new Node(p.data);
+            p.next = n;
+            aux = aux.next;
+            n.next = aux;
+            p = aux;
+        }
+    }
+    public void removeRecurrents(){
+        Node aux = head, p = head, back = head;
+        while(aux.next != null){
+            p = head;
+            while(p != null){
+                if(p.data == aux.data){
+                    back.next = aux.next;
+                }
+                p = p.next;
+            }
+        }
+        back = aux;
+        aux = aux.next;
+    }
+    
     public void insertZeros(){
         if(head == null) return;
-        Node aux = head;        
-        while(aux.next != null ){
+        Node aux = head;
+        for(int i = 1; i<count();i++){
             Node n = new Node(0);
             n.next = aux.next;
-            aux = aux.next;
-         }
+            aux.next = n;
+            aux = n.next;
+        }  
+        
     }    
-    public void removeMiddle(){
+    public void removeMiddle(){        
         if(head == null)return;   
-        Node aux = head;
-        while(count() %2 == 0){
+        Node aux = head, p = head;        
+        for(int i = 0; i<count()/2;i++){
+            p = aux;
             aux = aux.next;
         }
+        p.next = aux.next;
     }
        
     public int countOdds(){
         Node aux = head;
         int conter = 0;
-        while(count() %2 == 0){
-            conter++;
+        while(aux.next != null){
+            if(aux.data %2 ==1){
+                conter++;
+            }            
             aux = aux.next;
         }
         return conter;        

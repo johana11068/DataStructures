@@ -27,7 +27,7 @@ public class Test {
         l.print();
         int c = l.count();//cantidad de nodos
         System.out.println("Total nodes: "+c);
-        /*System.out.print("The first element is: ");
+        System.out.print("The first element is: ");
         l.printFirstElement();
         System.out.print("The last element is: ");
         l.printLastElement();
@@ -45,9 +45,20 @@ public class Test {
         l.print();
         System.out.println("The values after duplication Mirror: ");   
         l.duplicateMirror();
-        l.print();*/
+        l.print();
+        System.out.println("The duplicate Intercalated: ");   
+        l.duplicateIntercalated();
+        l.print();        
+        System.out.println("The remove duplicated: ");   
+        l.removeDuplicated();
+        l.print();
+        System.out.println("The remove recurrents: ");   
+        l.removeRecurrents();
+        l.print();
+        System.out.println("The insert zeros: ");
         l.insertZeros();
         l.print();
+        System.out.println("The remove middle: ");
         l.removeMiddle();
         l.print();
         int f = l.countOdds();
