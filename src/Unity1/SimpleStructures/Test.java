@@ -23,7 +23,7 @@ public class Test {
         l.add(7);
         l.add(9);
         l.add(4);     
-        System.out.print("Initial values: ");
+        /*System.out.print("Initial values: ");
         l.print();
         int c = l.count();//cantidad de nodos
         System.out.println("Total nodes: "+c);
@@ -45,16 +45,16 @@ public class Test {
         l.print();
         System.out.println("The values after duplication Mirror: ");   
         l.duplicateMirror();
-        l.print();
+        l.print(); 
         System.out.println("The duplicate Intercalated: ");   
         l.duplicateIntercalated();
-        l.print();        
+        l.print();       
         System.out.println("The remove duplicated: ");   
         l.removeDuplicated();
         l.print();
         System.out.println("The remove recurrents: ");   
         l.removeRecurrents();
-        l.print();
+        l.print();*/
         System.out.println("The insert zeros: ");
         l.insertZeros();
         l.print();

@@ -141,14 +141,15 @@ public class List {
         }    
     }
     public void duplicateIntercalated(){
+        if(head == null) return;
         Node aux = head, p = head;
-        while(aux.next != null){
+        while(aux != null){
             Node n = new Node(p.data);
-            p.next = n;
             aux = aux.next;
+            p.next = n;
             n.next = aux;
             p = aux;
-        }
+        }  
     }
     public void removeRecurrents(){
         Node aux = head, p = head, back = head;
@@ -156,7 +157,7 @@ public class List {
             p = head;
             while(p != null){
                 if(p.data == aux.data){
-                    back.next = aux.next;
+                    back.next = aux.next;                    
                 }
                 p = p.next;
             }
@@ -167,23 +168,28 @@ public class List {
     
     public void insertZeros(){
         if(head == null) return;
-        Node aux = head;
-        for(int i = 1; i<count();i++){
+        Node aux = head, p = head;
+        while(aux.next != null){
             Node n = new Node(0);
-            n.next = aux.next;
-            aux.next = n;
-            aux = n.next;
+            aux = aux.next;
+            p.next = n;
+            n.next = aux;
+            p = aux;
         }  
         
     }    
     public void removeMiddle(){        
-        if(head == null)return;   
-        Node aux = head, p = head;        
-        for(int i = 0; i<count()/2;i++){
-            p = aux;
-            aux = aux.next;
-        }
-        p.next = aux.next;
+        if(head == null)return;
+        int cont = 1;
+        int c = count()/2;
+        Node aux = head;
+        while(aux != null){
+            cont++;            
+            aux = aux.next;            
+            if(cont == c){
+                aux.next = aux.next.next;
+            }            
+        }        
     }
        
     public int countOdds(){
