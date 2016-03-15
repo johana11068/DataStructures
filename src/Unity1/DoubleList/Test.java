@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Unity2.DoubleList;
+package Unity1.DoubleList;
 
 /**
  *
@@ -24,12 +24,19 @@ public class Test {
         l.add(9);
         l.add(4);
         
-        System.out.print("The Reverse Print");
+        System.out.print("The Reverse Print: ");
         l.reversePrint();
+        
+        System.out.print("\nThe Push: ");
+        l.push(20);
         l.print();
         
-        System.out.println("The Push");
-        l.push(200);
+        System.out.print("The Remove Last: ");
+        l.removeLast();
+        l.print();
+        
+        System.out.print("The Remove first: ");
+        l.removeFirst();
         l.print();
     }
 }
