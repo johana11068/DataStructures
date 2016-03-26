@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Unity1.DoubleList;
+package Unity1.CircularList;
 
 /**
  *
- * @author AULA3
+ * @author Jairo David
  */
 public class List {
     private Node head;
@@ -22,21 +22,24 @@ public class List {
             head = n;
         }else{
             Node aux = head;
-            while(aux.next != null){
+            while(aux.next != head){
                 aux = aux.next;
             }
+            n.next = head;
             aux.next = n;
-            n.back = aux;
         }
     }
     public void print(){
+        if(head == null)return;
         Node aux = head;
-        while(aux != null){
-            System.out.print(" "+aux.data);
+        do{
+            System.out.println(" "+aux.data);
             aux = aux.next;
         }
-        System.out.println();
+        while(aux != head);
+        System.out.println("");
     }
+    /*
     public void reversePrint(){
         if(head == null) return;
         Node aux = head;
@@ -58,12 +61,6 @@ public class List {
             head = n;
         }
     }
-    public void removeFirst(){
-        if(head == null)return;
-        head = head.next;
-        head.back = null;
-        
-    }    
     public void removeLast(){
         if(head != null) return;
         Node aux = head;
@@ -73,38 +70,13 @@ public class List {
             while(aux.next != null){                
                 aux = aux.next;          
             }
-            aux.back = aux.next;
-        }
-    }
-    public void printFirstElement(){
-        Node aux = head;
-        if(aux == null){
-            System.out.print(" -1 ");
-        }else{
-            System.out.println(aux.data);
-        }
-    }        
-    public int count(){
-        Node aux = head;
-        int conter=0;
-        while(aux != null){
-            conter++;
-            aux = aux.next;
-        }
-        return conter;        
-    }
-    public void duplicate(){
-        if(head == null) return;
-        Node aux = head;
-        while(aux.next != null){
-            aux = aux.next;            
-        }  
-        int c = count();
-        for (int i = 0; i < c ; i++) {
-            aux.next = new Node(aux.data);
-            aux = aux.next;
-            
         }
     }
     
+    public void removeFirst(){
+        if(head == null)return;
+        head = head.next;
+        head.back = null;
+        
+    }*/
 }

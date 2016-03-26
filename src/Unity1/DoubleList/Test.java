@@ -38,5 +38,12 @@ public class Test {
         System.out.print("The Remove first: ");
         l.removeFirst();
         l.print();
+        
+        System.out.print("The print First Element: ");
+        l.printFirstElement();
+        
+        System.out.print("The duplicate Element: ");
+        l.duplicate();
+        l.print();
     }
 }

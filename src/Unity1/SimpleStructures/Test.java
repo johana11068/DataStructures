@@ -23,45 +23,59 @@ public class Test {
         l.add(7);
         l.add(9);
         l.add(4);     
-        /*System.out.print("Initial values: ");
+        /*
+        System.out.print("Initial values: ");
         l.print();
         int c = l.count();//cantidad de nodos
         System.out.println("Total nodes: "+c);
+        
         System.out.print("The first element is: ");
         l.printFirstElement();
+        
         System.out.print("The last element is: ");
         l.printLastElement();
+        
         System.out.println("The Remove is: ");
         l.remove(1);
         l.print();
+        
         System.out.println("The remove first element: ");
         l.removeFirstElement();
         l.print();
+        
         System.out.println("The remove Last element: ");       
         l.removeLastElement();
         l.print();        
+        */
         System.out.println("The values after duplication: ");   
         l.duplicate();
         l.print();
+        /*
         System.out.println("The values after duplication Mirror: ");   
         l.duplicateMirror();
         l.print(); 
+        
         System.out.println("The duplicate Intercalated: ");   
         l.duplicateIntercalated();
         l.print();       
+        
         System.out.println("The remove duplicated: ");   
         l.removeDuplicated();
         l.print();
+        
         System.out.println("The remove recurrents: ");   
         l.removeRecurrents();
-        l.print();*/
+        l.print();
+        
         System.out.println("The insert zeros: ");
         l.insertZeros();
         l.print();
+        
         System.out.println("The remove middle: ");
         l.removeMiddle();
         l.print();
+        
         int f = l.countOdds();
-        System.out.println("Total nodes: "+f);
+        System.out.println("Total nodes: "+f);*/
     }    
 }
