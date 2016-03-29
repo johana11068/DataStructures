@@ -22,6 +22,7 @@ public class Test {
         l.add(7);
         l.add(9);
         l.add(4);
+        l.print();
     }        
         
 }

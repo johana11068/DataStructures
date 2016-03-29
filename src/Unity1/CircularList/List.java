@@ -22,7 +22,7 @@ public class List {
             head = n;
         }else{
             Node aux = head;
-            while(aux.next != head){
+            while(aux != head){
                 aux = aux.next;
             }
             n.next = head;
@@ -39,44 +39,5 @@ public class List {
         while(aux != head);
         System.out.println("");
     }
-    /*
-    public void reversePrint(){
-        if(head == null) return;
-        Node aux = head;
-        while(aux.next != null){
-            aux = aux.next;
-        }
-        while(aux != null){
-            System.out.print(" "+aux.data);
-            aux = aux.back;
-        }
-    }
-    public void push(int d){
-        Node n = new Node(d);
-        if (head == null) {
-            head = n;
-        }else{
-            n.next = head;
-            head.back = n;
-            head = n;
-        }
-    }
-    public void removeLast(){
-        if(head != null) return;
-        Node aux = head;
-        if(head.next == null){
-            head = head.next;
-        }else{
-            while(aux.next != null){                
-                aux = aux.next;          
-            }
-        }
-    }
     
-    public void removeFirst(){
-        if(head == null)return;
-        head = head.next;
-        head.back = null;
-        
-    }*/
 }
