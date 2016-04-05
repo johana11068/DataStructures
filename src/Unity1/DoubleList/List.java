@@ -70,10 +70,11 @@ public class List {
         if(head.next == null){
             head = head.next;
         }else{
-            while(aux.next != null){                
-                aux = aux.next;          
+            Node p = head;
+            while(p.next != aux){                
+                p = p.next;          
             }
-            aux.back = aux.next;
+            p.next = null;
         }
     }
     public void printFirstElement(){
@@ -96,14 +97,16 @@ public class List {
     public void duplicate(){
         if(head == null) return;
         Node aux = head;
-        while(aux.next != null){
-            aux = aux.next;            
+        Node last = head;
+        while(last.next != null){
+            last = last.next;            
         }  
         int c = count();
         for (int i = 0; i < c ; i++) {
-            aux.next = new Node(aux.data);
+            last.next = new Node(aux.data);
             aux = aux.next;
-            
+            aux.back = last;
+            last = last.next;
         }
     }
     
