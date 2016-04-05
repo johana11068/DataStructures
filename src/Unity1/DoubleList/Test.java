@@ -45,5 +45,9 @@ public class Test {
         System.out.print("The duplicate Element: ");
         l.duplicate();
         l.print();
+        
+        System.out.print("The duplicate Intercaled: ");
+        l.duplicateIntercaled();
+        l.print();
     }
 }

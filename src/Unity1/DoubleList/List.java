@@ -61,22 +61,22 @@ public class List {
     public void removeFirst(){
         if(head == null)return;
         head = head.next;
-        head.back = null;
-        
+        head.back = null;        
     }    
     public void removeLast(){
         if(head != null) return;
         Node aux = head;
-        if(head.next == null){
-            head = head.next;
-        }else{
-            Node p = head;
-            while(p.next != aux){                
-                p = p.next;          
+        Node p = head;
+        while(aux.next != aux){
+            aux = aux.next;
+            while(p.next != aux){
+                p = p.next;
             }
-            p.next = null;
         }
+        p.next = null;
+        aux.back = p;
     }
+    
     public void printFirstElement(){
         Node aux = head;
         if(aux == null){
@@ -108,6 +108,20 @@ public class List {
             aux.back = last;
             last = last.next;
         }
+    }
+    public void duplicateIntercaled(){
+        if(head == null)return;
+        Node aux = head;
+        Node p = head;
+        while(aux != null){
+            Node n = new Node(p.data);
+            aux = aux.next;
+            p.next = n;
+            n.back=p;
+            n.next = aux;
+            p = aux;
+        }
+        
     }
     
 }
