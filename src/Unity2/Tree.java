@@ -5,6 +5,8 @@
  */
 package Unity2;
 
+import java.util.Vector;
+
 /**
  *
  * @author AULA1
@@ -40,4 +42,43 @@ public class Tree {
             }
         } 
     }
+    
+    public void printPath(int d){
+        Vector<Node> path = new Vector<Node>();
+        Node aux = root;
+        while(aux != null){
+            path.add(aux);
+            if(d > aux.data){
+                aux = aux.right;
+            }else if(d < aux.data){
+                aux = aux.left;
+            }else{
+                for (int i = 0; i < path.size(); i++) {
+                    System.out.println(" "+path.elementAt(i).data);
+                }
+                System.out.println();
+                return;
+            }
+        }
+        System.out.println("Doesn't exist ");
+    }
+    
+    public boolean isleaf (int d){
+        Node aux = root;
+        while(aux != null){
+            if(d > aux.data){
+                aux = aux.right;
+            }else if(d < aux.data){
+                aux = aux.left;
+            }else{
+                if(aux.right == null && aux.left == null){
+                return true;
+            }else{
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 }
+
