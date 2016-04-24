@@ -7,7 +7,7 @@ package Unity1.SimpleStructures;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Test {
     

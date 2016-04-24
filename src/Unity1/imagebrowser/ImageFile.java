@@ -7,7 +7,7 @@ package Unity1.imagebrowser;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class ImageFile {
     

@@ -5,11 +5,12 @@
  */
 package Unity2;
 
+import java.util.Stack;
 import java.util.Vector;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Tree {
     private Node root;
@@ -79,6 +80,78 @@ public class Tree {
             }
         }
         return false;
+    }
+    
+    public void print(){
+        Node aux=root;
+        Stack <Node> s = new Stack <Node> ();
+        while(aux!=null){
+            s.push(aux);
+            aux=aux.left;
+        }
+        while(!s.empty()){
+            aux=s.pop();
+            System.out.println(""+aux.data);
+            aux=aux.right;
+            while(aux!=null){
+                s.push(aux);
+                aux=aux.left;
+            }
+        }
+    }    
+    public int count(){
+        int cont=0;
+        Node aux=root;
+        Stack <Node> s = new Stack <Node> ();
+        while(aux!=null){
+            s.push(aux);
+            aux=aux.left;
+        }
+        while(!s.empty()){
+            aux=s.pop();
+            cont++;
+            aux=aux.right;
+            while(aux!=null){
+                s.push(aux);
+                aux=aux.left;
+            }
+        }
+        return cont;
+    }
+    public void printLeafs(){
+        Node aux = root;
+        Stack <Node> s = new Stack <Node> ();
+        while(aux != null){
+            s.push(aux);
+            aux = aux.left;
+        }
+        while(!s.empty()){
+            aux = s.pop();
+            aux = aux.right;
+            if(aux.left == null && aux.right == null){
+                System.out.println(" "+aux.data);
+            }
+            while(aux != null){
+                s.push(aux);
+                aux = aux.left;
+            }
+        }
+    }
+    public int max(){
+        if(root==null)return -1;
+        Node aux=root;
+        while(aux.right!=null){
+            aux=aux.right;
+        }
+        return aux.data;
+    }
+    public int min(){
+        if(root==null)return -1;
+        Node aux=root;
+        while(aux.left!=null){
+            aux=aux.left;
+        }
+        return aux.data;
     }
 }
 

@@ -7,7 +7,7 @@ package Unity1.doubleCircularList;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class List {
     private Node head;

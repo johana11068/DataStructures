@@ -7,7 +7,7 @@ package Unity2;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Test {
     public static void main (String [] args){        
@@ -22,15 +22,22 @@ public class Test {
         }
         int v = 15;
         System.out.println("Path to "+v+":");
-        t.printPath(v);
-        
+        t.printPath(v);        
         //---------------------------
         if(t.isleaf(v)){
             System.out.println(" "+v+" is a leaf");
         }else{
             System.out.println(" "+v+" doesn't a leaf");
         }
+        int c = t.count();
+        System.out.println("Total nodes: "+c);
         
+        /*System.out.println("Print Leafs: ");
+        t.printLeafs();*/
+       
+        System.out.println("Max: "+t.max());
+        
+        System.out.println("Min: "+t.min());     
         
     }
 }

@@ -3,7 +3,7 @@ package unity0;
 
 /**
  *
- * @author AULA 1
+ * @author Johana Romero
  */
 public class List {
     private int data[];

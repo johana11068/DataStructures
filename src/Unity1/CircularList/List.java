@@ -7,7 +7,7 @@ package Unity1.CircularList;
 
 /**
  *
- * @author Jairo David
+ * @author Johana Romero
  */
 public class List {
     private Node head;

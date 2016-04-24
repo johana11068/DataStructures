@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class MainWindow extends JFrame {
     private JButton left, right;

@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Interface extends JFrame{
     

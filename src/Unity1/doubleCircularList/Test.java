@@ -7,7 +7,7 @@ package Unity1.doubleCircularList;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Test {
     public static void main (String [] args){        

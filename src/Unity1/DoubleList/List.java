@@ -7,7 +7,7 @@ package Unity1.DoubleList;
 
 /**
  *
- * @author AULA3
+ * @author Johana Romero
  */
 public class List {
     private Node head;
@@ -68,13 +68,10 @@ public class List {
         Node aux = head;
         Node p = head;
         while(aux.next != aux){
+            p = aux;
             aux = aux.next;
-            while(p.next != aux){
-                p = p.next;
-            }
         }
-        p.next = null;
-        aux.back = p;
+        p.next = aux.next;
     }
     
     public void printFirstElement(){
@@ -123,5 +120,6 @@ public class List {
         }
         
     }
+    
     
 }

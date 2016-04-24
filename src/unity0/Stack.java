@@ -7,7 +7,7 @@ package unity0;
 
 /**
  *
- * @author AULA4
+ * @author Johana Romero
  */
 public class Stack {
     

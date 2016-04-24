@@ -7,7 +7,7 @@ package Unity2;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Node {
     protected int data;

@@ -7,7 +7,7 @@ package Unity1.DoubleList;
 
 /**
  *
- * @author AULA3
+ * @author Johana Romero
  */
 public class Node {
     protected int data;

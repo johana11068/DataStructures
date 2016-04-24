@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Graph extends JComponent{
     private Coordinate head;

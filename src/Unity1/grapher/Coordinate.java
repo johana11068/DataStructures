@@ -7,7 +7,7 @@ package Unity1.grapher;
 
 /**
  *
- * @author AULA1
+ * @author Johana Romero
  */
 public class Coordinate {
     
