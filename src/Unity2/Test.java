@@ -39,5 +39,12 @@ public class Test {
         
         System.out.println("Min: "+t.min());     
         
+        System.out.print("recursivePrint: ");
+        t.recursivePrint();
+        
+        int r = t.recursiveCount();
+        System.out.println("RecursiveCount: "+r);
+        
+        
     }
 }
