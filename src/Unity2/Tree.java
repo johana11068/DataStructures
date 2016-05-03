@@ -5,8 +5,11 @@
  */
 package Unity2;
 
+import java.awt.Graphics;
 import java.util.Stack;
 import java.util.Vector;
+import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 /**
  *
@@ -158,18 +161,95 @@ public class Tree {
         recursivePrint(root);
         System.out.println();
     }
+    
     private void recursivePrint(Node r){
         if(r == null)return;
         recursivePrint(r.left);//imprimir el lado izquierdo
         System.out.print(" "+r.data);//imprimir el root (cabecera)
         recursivePrint(r.right);//imprimi el lado derecho
     }
+    
     public int recursiveCount(){
         return recursiveCount(root);       
     }
+    
     private int recursiveCount(Node r){
         if(r == null) return 0;
         return recursiveCount(r.left) + recursiveCount(r.right) + 1;        
     }
+    
+    public int recursiveSum(){
+        return recursiveSum(root);
+    }
+    public int recursiveSum(Node r){
+        if(r == null)return 0;
+        return recursiveSum(r.left)+recursiveSum(r.right)+r.data;        
+    }
+    
+    public void rPrintLeafs(){
+        rPrintLeafs(root);
+    }
+    
+    private void rPrintLeafs(Node r){
+       if(r == null) return;
+       if(r.left == null && r.right == null){
+           System.out.println(r.data);
+           return;
+       }
+       rPrintLeafs(r.left);
+       rPrintLeafs(r.right);        
+    }
+    
+    public int rHelght(){
+        return rHelght(root);
+    }
+    private int rHelght(Node r){
+        if (r == null) return 0;        
+        int a = rHelght(r.left);
+        int b = rHelght(r.right);
+        return Math.max(a,b)+1;
+        
+    }
+    
+    public void rDraw(){
+        JFrame f = new JFrame(){            
+            public void paint(Graphics g){
+                rDraw(root,20,40,g);
+            }
+        };
+        f.setSize(600,400);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    class Info{
+        int xRoot, xFinal;
+    }
+    
+    private Info rDraw(Node r, int x, int y, Graphics g){
+        Info rootInfo = new Info();
+        rootInfo.xFinal = x;
+        if(r == null){
+            return rootInfo;
+        }
+        Info leftInfo, rightInfo;
+        leftInfo = rDraw(r.left,x,y+40,g);
+        x = leftInfo.xFinal;
+        
+        g.drawOval(x,y,30,30);
+        g.drawString(""+r.data,x+10,y+20);
+        rootInfo.xRoot = x;
+        
+        rightInfo = rDraw(r.right,x+30,y+40,g);
+        rootInfo.xFinal = rightInfo.xFinal;
+        
+        if(r.left != null){
+            g.drawLine(rootInfo.xRoot+5,y+25,leftInfo.xRoot+15,y+40);
+        }
+        if(r.right != null){
+            g.drawLine(rootInfo.xRoot+25,y+25,rightInfo.xRoot+15,y+40);
+        }
+        return rootInfo;
+        
+    } 
+       
 }
-

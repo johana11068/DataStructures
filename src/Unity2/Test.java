@@ -45,6 +45,11 @@ public class Test {
         int r = t.recursiveCount();
         System.out.println("RecursiveCount: "+r);
         
+        System.out.println("rPrintLeafs: ");
+        t.rPrintLeafs();
         
+        System.out.println("rHeight: "+t.rHelght());
+        
+        t.rDraw();
     }
 }
