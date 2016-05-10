@@ -16,7 +16,7 @@ public class Test {
     
     public static void testingList(){
         Tree t = new Tree();
-        int values[]={8,4,16,2,6,12,20,1,10,14,13,15};
+        int values[]={8,4,16,2,6,12,20,1,10,14,13,15};//aumentar tres a lo ulimo
         for (int i = 0; i < values.length ; i++) {
             t.add(values[i]);
         }
@@ -50,6 +50,10 @@ public class Test {
         
         System.out.println("rHeight: "+t.rHelght());
         
+        System.out.println("isComplete: "+t.isComplete());
+        t.rDraw();
+        System.out.println("Invert: ");
+        t.invert();
         t.rDraw();
     }
 }

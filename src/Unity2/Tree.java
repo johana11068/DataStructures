@@ -251,5 +251,54 @@ public class Tree {
         return rootInfo;
         
     } 
+    
+    public boolean isComplete(){
+        return isComplete(root);        
+    }
+    private boolean isComplete(Node r){
+        if(r == null)return true;
+        if(r.left == null ^ r.right == null){
+            return false;
+        }
+        return (isComplete(r.left) && isComplete(r.right));
+    }
+        
+    public boolean exists(int d){        
+        Node aux = root;
+        while(aux != null){
+            if(d == aux.data){
+                return true;
+            }else if(d > aux.data){
+                aux = aux.right;
+            }else{
+                aux = aux.left;
+            }
+        }
+        return false;
+    }
+    
+    public void invert(){
+        invert(root);
+    }
+    private void invert(Node r){
+        if(r == null) return;
+        Node aux = r.left;
+        r.left = r.right;
+        r.right = aux;
+        invert(r.left);
+        invert(r.right);
+    }
+    //prune()=cortar rama sobrante
+    public void prune(){
+        prune(root);
+    }
+    private void prune(Node r){
+        if(r == null)return;
+        
+    }
+    //completar hijo faltante
+    public void complete(){
+        
+    }
        
 }
