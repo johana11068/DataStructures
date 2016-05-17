@@ -296,9 +296,63 @@ public class Tree {
         if(r == null)return;
         
     }
-    //completar hijo faltante
-    public void complete(){
+    
+    public void reversePrint(){
+        reversePrint(root);
+    }
+    private void reversePrint(Node r){
+        if(r == null)return;
+        reversePrint(r.right);
+        System.out.println(""+r.data);
+        reversePrint(r.left);
+    }
+    
+    public void PrintSonAlone(){
+      PrintSonAlone(root);
+    }
+  
+    private void PrintSonAlone(Node r){
+        if(r == null) return;        
+        if(r.left == null && r.right != null ){
+            System.out.println(" "+r.right.data);
+        }else if (r.left != null && r.right == null){
+            System.out.println(" "+r.left.data);
+        }        
+        PrintSonAlone(r.left);
+        PrintSonAlone(r.right);
+    }
+    public void printMissing(){
+        printMissing(root);
+    }
+    private void printMissing(Node r){
+        if(r.left != null){            
+            for (int i = r.left.data; i < r.data; i++) {
+                System.out.println(""+i);                
+            }
+        }
+        if(r.right != null){
+            for (int j = r.right.data; j < r.data; j++) {
+                System.out.println(""+j);
+            }
+        }
         
     }
+    
+    public int countOdds(){
+        return countOdds(root);
+    }
+    
+    private int countOdds(Node r){        
+        if(r == null) return 0;
+        int count = countOdds(r.left) + countOdds(r.right);
+        if (r.data %2 == 1){
+            return count + 1;
+        }else{
+            return count;
+        }
+    }
+    
+    }
+    
+    
        
-}

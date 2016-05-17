@@ -16,11 +16,11 @@ public class Test {
     
     public static void testingList(){
         Tree t = new Tree();
-        int values[]={8,4,16,2,6,12,20,1,10,14,13,15};//aumentar tres a lo ulimo
+        int values[]={16,15,12,7,25,20,35,30};//aumentar tres a lo ulimo  8,4,16,2,6,12,20,1,10,14,13,15
         for (int i = 0; i < values.length ; i++) {
             t.add(values[i]);
         }
-        int v = 15;
+        /*int v = 15;
         System.out.println("Path to "+v+":");
         t.printPath(v);        
         //---------------------------
@@ -32,8 +32,8 @@ public class Test {
         int c = t.count();
         System.out.println("Total nodes: "+c);
         
-        /*System.out.println("Print Leafs: ");
-        t.printLeafs();*/
+        System.out.println("Print Leafs: ");
+        t.printLeafs();
        
         System.out.println("Max: "+t.max());
         
@@ -54,6 +54,21 @@ public class Test {
         t.rDraw();
         System.out.println("Invert: ");
         t.invert();
+        t.rDraw();
+        */
+    
+        
+        
+        System.out.println("reverse print: ");
+        t.reversePrint();
+        
+        System.out.println("Print Son Alone: ");
+        t.PrintSonAlone();
+        
+        System.out.println("Print missing");
+        t.printMissing();
+        
+        System.out.println("Count odds: "+t.countOdds());
         t.rDraw();
     }
 }
